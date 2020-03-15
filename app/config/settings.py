@@ -18,6 +18,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
+# User model
+AUTH_USER_MODEL = 'members.User'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '4#rsn@8py#)ux1#lq7_pk$6xo)4-%9q9%$p(5+)$5bv+l&!ned'
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_extensions',
     'drf_yasg',
+    'members.apps.MembersConfig',
     'snippets.apps.SnippetsConfig',
 
 ]
