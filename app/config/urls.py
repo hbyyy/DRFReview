@@ -33,4 +33,5 @@ urlpatterns = [
     path('api_fbv_v2/', include('snippets.urls.fbv_urls_v2')),
     path('api_cbv_apiview/', include('snippets.urls.cbv_urls_apiview')),
     path('api_cbv_mixins/', include('snippets.urls.cbv_urls_mixins')),
+    path('api_cbv_generic/', include('snippets.urls.cbv_urls_generic')),
 ]
