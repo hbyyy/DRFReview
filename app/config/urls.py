@@ -30,5 +30,6 @@ urlpatterns = [
     path('doc/', schema_view.with_ui('redoc', cache_timeout=0)),
     path('admin/', admin.site.urls),
     path('api_fbv_v1/', include('snippets.urls.fbv_urls_v1')),
-    path('api_fbv_v2/', include('snippets.urls.fbv_urls_v2'))
+    path('api_fbv_v2/', include('snippets.urls.fbv_urls_v2')),
+    path('api_cbv_apiview/', include('snippets.urls.cbv_urls_apiview'))
 ]
