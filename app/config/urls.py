@@ -29,9 +29,14 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('doc/', schema_view.with_ui('redoc', cache_timeout=0)),
     path('admin/', admin.site.urls),
+    path('users/', include('members.urls')),
     path('api_fbv_v1/', include('snippets.urls.fbv_urls_v1')),
     path('api_fbv_v2/', include('snippets.urls.fbv_urls_v2')),
     path('api_cbv_apiview/', include('snippets.urls.cbv_urls_apiview')),
     path('api_cbv_mixins/', include('snippets.urls.cbv_urls_mixins')),
     path('api_cbv_generic/', include('snippets.urls.cbv_urls_generic')),
+]
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls')),
 ]
