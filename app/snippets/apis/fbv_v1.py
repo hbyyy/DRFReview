@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.parsers import JSONParser
 
 from snippets.models import Snippet
-from snippets.serializers.modelserializer import SnippetSerializer
+from snippets.serializers.baseserializer import SnippetSerializer
 
 
 @csrf_exempt
@@ -38,12 +38,13 @@ def snippet_detail(request, pk):
         return JsonResponse(serializer.data)
 
     elif request.method == 'PUT':
-        data = JSONParser.parse(request)
+        data = JSONParser().parse(request)
         serializer = SnippetSerializer(snippet, data=data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     elif request.method == 'DELETE':
 
         snippet.delete()
